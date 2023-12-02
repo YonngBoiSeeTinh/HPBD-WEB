@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HBDP HAU</title>
+       <link rel="stylesheet" href="style.css">
+
+    </head>
+   <style>
+    
+body{
+    display: grid;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    width: auto;
+    background: linear-gradient(#0b1522,#080707);
+    font-family: "Poppins",sans-serif;
+}
+.cart{
+   display: flex;
+   width: auto;
+   justify-content: center;
+   transform: translateY(calc(45vh)); 
+}
+.heart{
+    height: 100px;
+    width: 100px;
+    background: #f20044;  
+    transform: rotate(-45deg);
+    position: relative;
+    box-shadow: -10px 10px 150px #f20044;
+    animation: heart 0.6s linear infinite;
+}
+.heart:hover{
+    cursor: pointer;
+}
+.heart::before{
+    content: "";
+    height: 100px;
+    width: 100px;
+    background: #f20044;  
+    position: absolute;
+    top:-50%;
+    border-radius: 50px;
+    box-shadow: -10px -10px 150px #f20045e6;
+}
+.heart::after{
+    content: "";
+    height: 100px;
+    width: 100px;
+    background: #f20044;  
+    position: absolute;
+    right: -50%;
+    border-radius: 50px;
+    box-shadow: 10px 10px 150px #f20045dc;
+}
+@keyframes heart{
+    0%{
+        transform: rotate(-45deg) scale(1.07);
+    }
+    80%{
+        transform: rotate(-45deg) scale(1.0);
+    }
+    100%{
+        transform: rotate(-45deg) scale(0.8);
+    }
+}
+
+
+.snow-wrap{
+height: 100vh;
+pointer-events: none;
+position: relative;
+overflow: hidden;
+margin-top:-30vh ;
+}
+.snow,.snow::before,.snow::after{
+content: "";
+position: absolute;
+top:-300vh;
+left: 0;
+right: 0;
+bottom: 0;
+background-image:
+ radial-gradient(0.5em 0.5em at 20vh 7vh ,#fff,transparent),
+ radial-gradient(1em 1em at 80vh 30vh ,#fff,transparent),
+ radial-gradient(0.7em 0.7em at 50vh 15vh ,#fff,transparent),
+ radial-gradient(0.5em 0.5em at 70vh 75vh ,#fff,transparent),
+ radial-gradient(1em 1em at 90vh 50vh ,#fff,transparent),
+ radial-gradient(0.7em 0.7em at 15vh  22vh ,#fff,transparent),
+ radial-gradient(0.5em 0.5em at 40vh 50vh ,#fff,transparent),
+ radial-gradient(1em 1em at 25vh 45vh ,#fff,transparent),
+ radial-gradient(1em 1em at 65vh 37vh ,#fff,transparent),
+ radial-gradient(0.7em 0.7em at 10vh 80vh ,#fff,transparent);
+ opacity: 0.7;
+background-size: 95vh 95vh;
+animation: snowAnim 3s linear;
+animation-iteration-count: infinite;
+}
+.snow::after{
+margin-left: -50%;
+opacity: 0.3;
+filter: blur(2px);
+}
+.snow::before{
+    margin-left: -60%;
+    opacity: 0.4;
+    filter: blur(4px);
+}
+@keyframes snowAnim{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(100vh);
+    }
+}
+.line{
+   position: relative;
+   width: 23em;
+   top:27vh;
+   margin: 0 auto;
+   font-size: 100%;
+   text-align: center;
+   overflow: hidden; /* Hide overflowing text */
+   height: 23px;
+}
+.msg{
+    color: #fff;
+    font-size: 20px;
+    white-space: nowrap; /* Prevent line breaks */
+    letter-spacing: 4px; /* Adjust letter spacing */
+    animation: 
+    typing 4s;    
+}
+.line2{
+    position: relative;
+    width: 40em;
+    top:30vh;
+    margin: 8px auto;
+    font-size: 100%;
+    text-align: center;
+    overflow: hidden; /* Hide overflowing text */
+    height: 20px;
+}
+.msg2{
+    color: #fff;
+    font-size: 22px;
+    border-right: 1.5px solid #fff; /* Cursor effect */
+    white-space: nowrap; /* Prevent line breaks */
+    letter-spacing: 4px; /* Adjust letter spacing */
+    display: none;
+    animation:
+     typing2 6s  ,
+    cursor .4s step-end infinite alternate; 
+    display: block;
+}
+@keyframes cursor{
+    50%{
+        border-color: transparent;
+    }
+}
+@keyframes typing{
+    from{width: 0;}
+    to{
+        width: 28em;
+    }
+}
+@keyframes typing2{
+    
+    from{width: 0;}
+    to{
+        width: 40em;
+        
+    }
+}
+
+   </style>
+    <body>
+       
+           <div class="container">
+            <p class=" line msg">Chúc mừng sinh nhật Hậu nhé :333</p>
+            <p class=" line2 msg2">Chúc cậu luôn vui vẻ, hạnh phúc.Trời lạnh rồi, mặc ấm vào nhé.</p>
+            
+            <div class="cart">
+                <div class="heart"></div>
+               
+            </div>
+          
+            <div class="snow-wrap">
+                <div class="snow"></div>
+            </div>
+           </div>
+            
+            
+       
+    </body>
+</html>
